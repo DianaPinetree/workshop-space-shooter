@@ -21,6 +21,11 @@ public class PlayerInputValues
             controllerIndex++;
             inputActions.Enable();
         }
+        else
+        {
+            inputActions.devices = new[] { Keyboard.current};
+            inputActions.Enable();
+        }
     }
 
     public void AssignController(InputDevice device)
