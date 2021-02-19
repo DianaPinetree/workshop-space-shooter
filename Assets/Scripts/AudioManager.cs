@@ -54,6 +54,8 @@ public class AudioManager : Singleton<AudioManager>
         else
         {
             musicSource.clip = musicClip;
+            // Audio Source 
+            musicSource.volume = 0.5f;
             musicSource.Play();
         }
     }

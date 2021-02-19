@@ -82,7 +82,7 @@ MonoBehaviour:
   specialWeapon: 0
   attackSpeed: 0.5
   weaponDamage: 10
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 541c04a6131966a4b96406d237ccf228, type: 3}
 --- !u!1 &5404099119011223881
 GameObject:
   m_ObjectHideFlags: 0

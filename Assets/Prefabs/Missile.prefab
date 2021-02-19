@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9028049203672332608}
-  - component: {fileID: 9028049203672332609}
+  - component: {fileID: 7555624799325408345}
   m_Layer: 0
-  m_Name: LaserProjectile
+  m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,10 +29,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9028049204707011047}
+  - {fileID: 8521844333288120080}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9028049203672332609
+--- !u!114 &7555624799325408345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,16 +42,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 9028049203672332611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16c4c1237448cf0468310d024bc3d829, type: 3}
+  m_Script: {fileID: 11500000, guid: 39b444c264cb6b548b1821799bc0de67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 30
+  velocity: 20
   collisionMask:
     serializedVersion: 2
     m_Bits: 0
   projectileDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7555624799325408345}
+        m_TargetAssemblyTypeName: SeekerProjectile, Assembly-CSharp
+        m_MethodName: Explode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  seekAmount: 0.8
+  explosionRadius: 3
+  explosionParticles: {fileID: 4110038400954351945, guid: daf64e98d09be9549bb28db7e6ffffb3, type: 3}
+  explosionSound: {fileID: 8300000, guid: 85dea402c78d5b647ac2d2e79dae09cf, type: 3}
 --- !u!1 &9028049204707011046
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,3 +164,65 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &407443084152914872
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9028049203672332608}
+    m_Modifications:
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350846985591299245, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+      propertyPath: m_Name
+      value: MissileTrail
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+--- !u!4 &8521844333288120080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8350846985591299240, guid: 1e1ab786801415f44b78f2f3677820a6, type: 3}
+  m_PrefabInstance: {fileID: 407443084152914872}
+  m_PrefabAsset: {fileID: 0}

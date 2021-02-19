@@ -44,7 +44,7 @@ public class ShipWeapon : MonoBehaviour
             p.gameObject.SetActive(true);
             
            Ship target = MatchManager.Ships[0] == ship? 
-                MatchManager.Ships[1] : MatchManager.Ships[0]; 
+                MatchManager.Ships[0] : MatchManager.Ships[1]; 
             // Shoot
             p.Move(bulletTravelDistance, weaponDamage, target.transform); 
         }
@@ -58,7 +58,7 @@ public class ShipWeapon : MonoBehaviour
             newProjectile.gameObject.SetActive(true);
 
             Ship target = MatchManager.Ships[0] == ship? 
-                MatchManager.Ships[1] : MatchManager.Ships[0]; 
+                MatchManager.Ships[0] : MatchManager.Ships[1]; 
             // Shoot
             newProjectile.Move(bulletTravelDistance, weaponDamage, target.transform);
         }
